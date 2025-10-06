@@ -1,0 +1,17 @@
+*** Settings ***
+Library    SeleniumLibrary
+
+*** Variables ***
+${BASE_URL}      https://robot-lab-five.vercel.app/
+${BROWSER}       chrome
+${VALID_PASSWORD}  myPassword123
+${FIRST_NAME}    Boss
+${LAST_NAME}     Tester
+
+*** Test Cases ***
+Open Browser To Register Page
+    Open Browser    ${BASE_URL}    ${BROWSER}
+    Maximize Browser Window
+    Wait Until Element Is Visible    xpath=//button[contains(@class,'nav-btn-register')]    5s
+    Click Element    xpath=//button[contains(@class,'nav-btn-register')]
+    Sleep    6s
